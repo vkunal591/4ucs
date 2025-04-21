@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+:root {
+  --background: rgb(0, 0, 0, 95%);
+  --foreground: rgb(225, 225, 225, 90%);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: rgb(0, 0, 0, 95%);
+    --foreground: rgb(225, 225, 225, 90%);
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
