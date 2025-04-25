@@ -16,15 +16,15 @@ export default function Footer() {
                 className="relative w-12 h-12"
               >
                 <Image
-                  src="/assets/emojis/rocket.png"
-                  alt="Qmos Logo"
+                  src="/assets/logo/logo.png"
+                  alt="4U Consultant Services"
                   fill
                   className="object-contain"
                   priority
                 />
               </motion.div>
               <span className="ml-3 text-white text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-                Qmos
+                Consultant Services
               </span>
             </Link>
             <p className="mt-4 text-gray-400">
@@ -39,7 +39,7 @@ export default function Footer() {
                 className="text-gray-400 hover:text-white"
               >
                 <Image
-                  src="/assets/social/linkedin.png"
+                  src="/assets/icons/call.png"
                   alt="LinkedIn"
                   width={24}
                   height={24}
@@ -53,7 +53,7 @@ export default function Footer() {
                 className="text-gray-400 hover:text-white"
               >
                 <Image
-                  src="/assets/social/twitter.png"
+                  src="/assets/icons/mail.png"
                   alt="Twitter"
                   width={24}
                   height={24}
@@ -67,7 +67,7 @@ export default function Footer() {
                 className="text-gray-400 hover:text-white"
               >
                 <Image
-                  src="/assets/social/github.png"
+                  src="/assets/icons/whatsapp.png"
                   alt="GitHub"
                   width={24}
                   height={24}
@@ -79,11 +79,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-white font-semibold mb-4 flex items-center">
               <Image
-                src="/assets/emojis/gear.png"
+                src="/assets/icons/gear.png"
                 alt="Services"
                 width={20}
                 height={20}
-                className="mr-2"
+                className="mr-2 filter brightness-0 invert"
               />
               Services
             </h3>
@@ -94,11 +94,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/services/web-dev.png"
+                    src="/assets/icons/webdev.png"
                     alt="Web"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   Web Development
                 </Link>
@@ -109,11 +109,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/services/mobile-dev.png"
+                    src="/assets/icons/mobile.png"
                     alt="Mobile"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   Mobile Apps
                 </Link>
@@ -124,11 +124,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/services/cloud-dev.png"
+                    src="/assets/icons/cloud.png"
                     alt="Cloud"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   Cloud Solutions
                 </Link>
@@ -138,11 +138,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-white font-semibold mb-4 flex items-center">
               <Image
-                src="/assets/emojis/briefcase.png"
+                src="/assets/icons/company.png"
                 alt="Company"
                 width={20}
                 height={20}
-                className="mr-2"
+                className="mr-2 filter brightness-0 invert"
               />
               Company
             </h3>
@@ -153,11 +153,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/emojis/information.png"
+                    src="/assets/icons/about.png"
                     alt="About"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   About Us
                 </Link>
@@ -168,11 +168,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/emojis/envelope.png"
+                    src="/assets/icons/contact.png"
                     alt="Contact"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   Contact
                 </Link>
@@ -183,11 +183,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/emojis/briefcase.png"
+                    src="/assets/icons/career.png"
                     alt="Careers"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   Careers
                 </Link>
@@ -197,11 +197,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h3 className="text-white font-semibold mb-4 flex items-center">
               <Image
-                src="/assets/emojis/globe.png"
+                src="/assets/icons/connect.png"
                 alt="Connect"
                 width={20}
                 height={20}
-                className="mr-2"
+                className="mr-2 filter brightness-0 invert"
               />
               Connect
             </h3>
@@ -212,11 +212,11 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/social/linkedin.png"
+                    src="/assets/icons/linkedin.png"
                     alt="LinkedIn"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
                   LinkedIn
                 </Link>
@@ -227,13 +227,13 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/social/twitter.png"
-                    alt="Twitter"
+                    src="/assets/icons/facebook.png"
+                    alt="Facebook"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
-                  Twitter
+                  Facebook
                 </Link>
               </li>
               <li>
@@ -242,13 +242,13 @@ export default function Footer() {
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
-                    src="/assets/social/github.png"
-                    alt="GitHub"
+                    src="/assets/icons/insta.png"
+                    alt="Instagram"
                     width={16}
                     height={16}
-                    className="mr-2"
+                    className="mr-2 filter brightness-0 invert"
                   />
-                  GitHub
+                  Instagram
                 </Link>
               </li>
             </ul>
@@ -256,7 +256,7 @@ export default function Footer() {
         </div>
         <div className="mt-8 pt-8 border-t border-gray-800">
           <p className="text-center text-gray-400">
-            © {new Date().getFullYear()} Qmos. All rights reserved.
+            © {new Date().getFullYear()} 4U Consultant Services. All rights reserved.
           </p>
         </div>
       </div>

@@ -14,9 +14,20 @@ export default function Home() {
 
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
   const scale = useTransform(scrollYProgress, [0, 0.2], [1, 0.8]);
-
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity2 = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   return (
-    <div ref={mainRef} className="min-h-screen">
+    <div ref={mainRef} className="min-h-screen relative">
+      <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black" />
+        <Image
+          src="/assets/space-bg.jpg"
+          alt="Background"
+          fill
+          className="object-cover"
+          priority
+        />
+      </motion.div>
       <HeroSection />
 
       {/* Section 1: What We Do */}
@@ -42,17 +53,17 @@ export default function Home() {
                 title: "Web Development",
                 description:
                   "Modern, responsive, and scalable web applications",
-                icon: "/assets/solutions/web.svg",
+                icon: "/assets/icons/webdev.png",
               },
               {
                 title: "Mobile Apps",
                 description: "Native and cross-platform mobile applications",
-                icon: "/assets/solutions/mobile.svg",
+                icon: "/assets/icons/mobile.png",
               },
               {
                 title: "Cloud Services",
                 description: "Scalable and secure cloud infrastructure",
-                icon: "/assets/solutions/cloud.svg",
+                icon: "/assets/icons/cloud.png",
               },
             ].map((service, index) => (
               <motion.div
@@ -101,18 +112,18 @@ export default function Home() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
             {[
-              { name: "React", icon: "/assets/tech/react.svg" },
-              { name: "Next.js", icon: "/assets/tech/nextjs.svg" },
+              { name: "React", icon: "/assets/tech/tech2.svg" },
+              { name: "Next.js", icon: "/assets/tech/next.svg" },
               { name: "Node.js", icon: "/assets/tech/nodejs.svg" },
-              { name: "Python", icon: "/assets/tech/python.svg" },
-              { name: "AWS", icon: "/assets/tech/aws.svg" },
-              { name: "Azure", icon: "/assets/tech/azure.svg" },
-              { name: "Docker", icon: "/assets/tech/docker.svg" },
-              { name: "Kubernetes", icon: "/assets/tech/kubernetes.svg" },
-              { name: "MongoDB", icon: "/assets/tech/mongodb.svg" },
-              { name: "PostgreSQL", icon: "/assets/tech/postgresql.svg" },
-              { name: "TypeScript", icon: "/assets/tech/typescript.svg" },
-              { name: "GraphQL", icon: "/assets/tech/graphql.svg" },
+              { name: "Python", icon: "/assets/tech/tech1.svg" },
+              { name: "AWS", icon: "/assets/tech/tech7.svg" },
+              { name: "PHP", icon: "/assets/tech/php.svg" },
+              { name: "Docker", icon: "/assets/tech/tech6.svg" },
+              { name: "Flutter", icon: "/assets/tech/tech4.svg" },
+              { name: "MongoDB", icon: "/assets/tech/mongodb.png" },
+              { name: "PostgreSQL", icon: "/assets/tech/postgresql.png" },
+              { name: "TypeScript", icon: "/assets/tech/typescript.png" },
+              { name: "Kotlin", icon: "/assets/tech/tech5.svg" },
             ].map((tech, index) => (
               <motion.div
                 key={tech.name}
@@ -122,13 +133,15 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 className="flex flex-col items-center group backdrop-blur-sm bg-blue-500/10 p-6 rounded-xl border border-blue-500/20"
               >
-                <Image
-                  src={tech.icon}
-                  alt={tech.name}
-                  width={64}
-                  height={64}
-                  className="filter brightness-0 invert mb-4"
-                />
+                <div className="w-16 h-16 mb-2">
+                  <Image
+                    src={tech.icon}
+                    alt={tech.name}
+                    width={64}
+                    height={64}
+                    className="filter object-contain w-full h-full brightness-0 invert mb-4"
+                  />
+                </div>
                 <span className="text-gray-300">{tech.name}</span>
               </motion.div>
             ))}
@@ -158,17 +171,17 @@ export default function Home() {
               {
                 title: "Healthcare",
                 description: "Digital health solutions and medical software",
-                icon: "/assets/industries/healthcare.svg",
+                icon: "/assets/icons/healthcare.png",
               },
               {
                 title: "Finance",
                 description: "FinTech and banking solutions",
-                icon: "/assets/industries/finance.svg",
+                icon: "/assets/icons/finance.png",
               },
               {
                 title: "Retail",
                 description: "E-commerce and retail management systems",
-                icon: "/assets/industries/retail.svg",
+                icon: "/assets/icons/retail.png",
               },
             ].map((industry, index) => (
               <motion.div
@@ -220,22 +233,22 @@ export default function Home() {
               {
                 title: "Discovery",
                 description: "Understanding your needs and goals",
-                icon: "/assets/process/discovery.svg",
+                icon: "/assets/icons/discover.png",
               },
               {
                 title: "Planning",
                 description: "Creating detailed project roadmap",
-                icon: "/assets/process/planning.svg",
+                icon: "/assets/icons/plan.png",
               },
               {
                 title: "Development",
                 description: "Building with precision and care",
-                icon: "/assets/process/development.svg",
+                icon: "/assets/icons/development.png",
               },
               {
                 title: "Delivery",
                 description: "Ensuring successful deployment",
-                icon: "/assets/process/delivery.svg",
+                icon: "/assets/icons/deliver.png",
               },
             ].map((step, index) => (
               <motion.div
@@ -288,18 +301,18 @@ export default function Home() {
                 title: "Expert Team",
                 description:
                   "Highly skilled professionals with years of experience",
-                icon: "/assets/why/team.svg",
+                icon: "/assets/icons/expert.png",
               },
               {
                 title: "Quality Focus",
                 description:
                   "Commitment to delivering the highest quality solutions",
-                icon: "/assets/why/quality.svg",
+                icon: "/assets/icons/quality.png",
               },
               {
                 title: "Client-Centric",
                 description: "Your success is our top priority",
-                icon: "/assets/why/client.svg",
+                icon: "/assets/icons/client.png",
               },
             ].map((reason, index) => (
               <motion.div
@@ -351,17 +364,17 @@ export default function Home() {
               {
                 title: "Cloud Computing",
                 description: "Scalable and secure cloud solutions",
-                icon: "/assets/expertise/cloud.svg",
+                icon: "/assets/icons/cloud.png",
               },
               {
                 title: "AI & ML",
                 description: "Intelligent solutions for business growth",
-                icon: "/assets/expertise/ai.svg",
+                icon: "/assets/icons/ai.png",
               },
               {
                 title: "Cybersecurity",
                 description: "Protecting your digital assets",
-                icon: "/assets/expertise/security.svg",
+                icon: "/assets/icons/cybersecurity.png",
               },
             ].map((expertise, index) => (
               <motion.div
@@ -413,17 +426,17 @@ export default function Home() {
               {
                 title: "Increased Efficiency",
                 description: "Streamlined operations and improved productivity",
-                icon: "/assets/success/efficiency.svg",
+                icon: "/assets/icons/efficiency.png",
               },
               {
                 title: "Cost Reduction",
                 description: "Optimized processes and reduced expenses",
-                icon: "/assets/success/cost.svg",
+                icon: "/assets/icons/cost.png",
               },
               {
                 title: "Business Growth",
                 description: "Scalable solutions for expansion",
-                icon: "/assets/success/growth.svg",
+                icon: "/assets/icons/growth.png",
               },
             ].map((success, index) => (
               <motion.div
@@ -475,17 +488,17 @@ export default function Home() {
               {
                 title: "R&D",
                 description: "Continuous research and development",
-                icon: "/assets/innovation/research.svg",
+                icon: "/assets/icons/research.png",
               },
               {
                 title: "Emerging Tech",
                 description: "Exploring cutting-edge technologies",
-                icon: "/assets/innovation/tech.svg",
+                icon: "/assets/icons/tech.png",
               },
               {
                 title: "Future Vision",
                 description: "Shaping tomorrow's solutions",
-                icon: "/assets/innovation/vision.svg",
+                icon: "/assets/icons/future.png",
               },
             ].map((innovation, index) => (
               <motion.div
@@ -537,17 +550,17 @@ export default function Home() {
               {
                 title: "Global Presence",
                 description: "Operating across multiple continents",
-                icon: "/assets/global/presence.svg",
+                icon: "/assets/icons/global.png",
               },
               {
                 title: "Local Expertise",
                 description: "Understanding regional markets",
-                icon: "/assets/global/expertise.svg",
+                icon: "/assets/icons/experties.png",
               },
               {
                 title: "24/7 Support",
                 description: "Round-the-clock assistance",
-                icon: "/assets/global/support.svg",
+                icon: "/assets/icons/support.png",
               },
             ].map((global, index) => (
               <motion.div

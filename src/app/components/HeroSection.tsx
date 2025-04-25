@@ -5,12 +5,18 @@ import Link from "next/link";
 import { useRef } from "react";
 
 const techIcons = [
-  { name: "React", icon: "/assets/tech/react.svg" },
+  { name: "React", icon: "/assets/tech/tech2.svg" },
+  { name: "Next.js", icon: "/assets/tech/next.svg" },
   { name: "Node.js", icon: "/assets/tech/nodejs.svg" },
-  { name: "Python", icon: "/assets/tech/python.svg" },
-  { name: "AWS", icon: "/assets/tech/aws.svg" },
-  { name: "Docker", icon: "/assets/tech/docker.svg" },
-  { name: "Kubernetes", icon: "/assets/tech/kubernetes.svg" },
+  { name: "Python", icon: "/assets/tech/tech1.svg" },
+  { name: "AWS", icon: "/assets/tech/tech7.svg" },
+  { name: "PHP", icon: "/assets/tech/php.svg" },
+  { name: "Docker", icon: "/assets/tech/tech6.svg" },
+  { name: "Flutter", icon: "/assets/tech/tech4.svg" },
+  { name: "MongoDB", icon: "/assets/tech/mongodb.png" },
+  { name: "PostgreSQL", icon: "/assets/tech/postgresql.png" },
+  { name: "TypeScript", icon: "/assets/tech/typescript.png" },
+  { name: "Kotlin", icon: "/assets/tech/tech5.svg" },
 ];
 
 export default function HeroSection() {
@@ -29,7 +35,7 @@ export default function HeroSection() {
       <motion.div style={{ y, opacity }} className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-blue-900/20 to-black" />
         <Image
-          src="/assets/bg/hero-bg.jpg"
+          src="/assets/space-bg.jpg"
           alt="Background"
           fill
           className="object-cover"
