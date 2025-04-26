@@ -180,10 +180,10 @@ const Navbar = () => {
                 className="relative w-20 h-20"
               >
                 <Image
-                  src="/assets/logo/logo.png"
+                  src="/assets/logo/logofinal.png"
                   alt="4U Consultant Services"
                   fill
-                  className="object-contain"
+                  className="object-contain filter invert brightness-0 scale-125"
                   priority
                 />
               </motion.div>

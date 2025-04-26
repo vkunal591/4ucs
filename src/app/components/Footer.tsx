@@ -13,13 +13,13 @@ export default function Footer() {
               <motion.div
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="relative w-12 h-12"
+                className="relative w-20 h-20"
               >
                 <Image
-                  src="/assets/logo/logo.png"
+                  src="/assets/logo/logofinal.png"
                   alt="4U Consultant Services"
                   fill
-                  className="object-contain"
+                  className="object-contain filter invert brightness-0 scale-150"
                   priority
                 />
               </motion.div>
@@ -40,14 +40,14 @@ export default function Footer() {
               >
                 <Image
                   src="/assets/icons/call.png"
-                  alt="LinkedIn"
+                  alt="4U Consultant Services"
                   width={24}
                   height={24}
                   className="filter brightness-0 invert"
                 />
               </motion.a>
               <motion.a
-                href="#"
+                href="mailto:4uconsultantservice@gmail.com"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="text-gray-400 hover:text-white"
@@ -149,7 +149,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/about"
+                  href="/about-us"
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
@@ -164,7 +164,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/contact-us"
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
@@ -179,7 +179,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/careers"
+                  href="/"
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
@@ -208,7 +208,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="#"
+                  href="https://www.facebook.com/4uconsultantservice"
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
@@ -223,7 +223,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/company/4u-consultant-service"
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image
@@ -238,7 +238,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/4uconsultantservice?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   className="text-gray-400 hover:text-white flex items-center"
                 >
                   <Image

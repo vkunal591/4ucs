@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
+import { useRef } from "react";
 
 const stats = [
   { label: "Years Experience", value: "10+" },
@@ -14,33 +15,41 @@ const values = [
     title: "Innovation",
     description:
       "Pushing boundaries with cutting-edge solutions and creative thinking",
-    icon: "/assets/values/innovation.svg",
+    icon: "/assets/icons/innovation.png",
   },
   {
     title: "Excellence",
     description: "Delivering exceptional quality in every project we undertake",
-    icon: "/assets/values/excellence.svg",
+    icon: "/assets/icons/excelence.png",
   },
   {
     title: "Integrity",
     description: "Building trust through transparency and ethical practices",
-    icon: "/assets/values/integrity.svg",
+    icon: "/assets/icons/integrity.png",
   },
   {
     title: "Collaboration",
     description: "Working together to achieve extraordinary results",
-    icon: "/assets/values/collaboration.svg",
+    icon: "/assets/icons/collabration.png",
   },
 ];
 
 export default function AboutUs() {
+  const mainRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: mainRef,
+    offset: ["start start", "end end"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   return (
     <div className="min-h-screen bg-black text-white">
       {/* Hero Section */}
+   
       <div className="relative h-[60vh] overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-black/50 z-10" />
         <Image
-          src="/assets/bg/about-hero.jpg"
+          src="/assets/space-bg.jpg"
           alt="About Us Hero"
           fill
           className="object-cover"
@@ -62,7 +71,7 @@ export default function AboutUs() {
       </div>
 
       {/* Stats Section */}
-      <div className="py-20 bg-gradient-to-b from-black to-blue-900/20">
+      <div className="py-20 bg-gradient-to-b from-black to-blue-900/20 hidden">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -82,6 +91,7 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
+
 
       {/* Our Values Section */}
       <div className="py-20">
@@ -108,7 +118,7 @@ export default function AboutUs() {
                   alt={value.title}
                   width={64}
                   height={64}
-                  className="mx-auto mb-4"
+                  className="mx-auto mb-4 filter invert brightness-0"
                 />
                 <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
                 <p className="text-gray-400">{value.description}</p>

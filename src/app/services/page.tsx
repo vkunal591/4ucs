@@ -7,7 +7,7 @@ const services = [
   {
     name: "Web Development",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/globe-with-meridians.png",
+      "/assets/icons/webdev.png",
     path: "/services/web-development",
     description:
       "Custom web applications and websites built with modern technologies",
@@ -15,7 +15,7 @@ const services = [
   {
     name: "App Development",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/mobile-phone.png",
+      "/assets/icons/mobile.png",
     path: "/services/app-development",
     description:
       "Native and cross-platform mobile applications for iOS and Android",
@@ -23,7 +23,7 @@ const services = [
   {
     name: "Artificial Intelligence",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/robot.png",
+      "/assets/icons/ai.png",
     path: "/services/artificial-intelligence",
     description:
       "AI-powered solutions for automation and intelligent decision making",
@@ -31,42 +31,42 @@ const services = [
   {
     name: "Saas Development",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/cloud.png",
+      "/assets/icons/webdev.png",
     path: "/services/saas-development",
     description: "Cloud-based software solutions for businesses of all sizes",
   },
   {
     name: "Blockchain Development",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/chain.png",
+      "/assets/icons/blockchain.png",
     path: "/services/blockchain-development",
     description: "Decentralized applications and smart contract development",
   },
   {
     name: "CRM Development",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/briefcase.png",
+      "/assets/icons/crm.png",
     path: "/services/crm-development",
     description: "Custom CRM solutions to streamline customer relationships",
   },
   {
     name: "UX/UI Designing",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/artist-palette.png",
+      "/assets/icons/uiux.png",
     path: "/services/ux-ui-designing",
     description: "User-centered design for exceptional digital experiences",
   },
   {
     name: "Digital Marketing",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/megaphone.png",
+      "/assets/icons/growth.png",
     path: "/services/digital-marketing",
     description: "Strategic digital marketing solutions for business growth",
   },
   {
     name: "API Development",
     image:
-      "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Animated-Fluent-Emojis/master/Emojis/Objects/gear.png",
+      "/assets/icons/connect.png",
     path: "/services/api-development",
     description: "Robust API solutions for seamless system integration",
   },
@@ -101,20 +101,20 @@ export default function ServicesPage() {
               whileHover={{ scale: 1.05 }}
               className="bg-gray-900/50 backdrop-blur-sm rounded-lg p-6 hover:bg-gray-800/50 transition-all duration-300"
             >
-              <Link href={service.path}>
+              {/* <Link href={service.path}> */}
                 <div className="flex items-center mb-4">
                   <div className="relative w-12 h-12 mr-4">
                     <Image
                       src={service.image}
                       alt={service.name}
                       fill
-                      className="object-contain"
+                      className="object-contain filter invert brightness-0"
                     />
                   </div>
                   <h2 className="text-xl font-semibold">{service.name}</h2>
                 </div>
                 <p className="text-gray-400">{service.description}</p>
-              </Link>
+              {/* </Link> */}
             </motion.div>
           ))}
         </div>

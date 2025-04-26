@@ -10,7 +10,7 @@ const projects = [
   {
     title: "E-Commerce Platform",
     category: "Web",
-    image: "/assets/projects/ecommerce.jpg",
+    image: "/assets/icons/retail.gif",
     description:
       "A full-featured e-commerce platform with advanced analytics and inventory management.",
     technologies: ["React", "Node.js", "MongoDB", "AWS"],
@@ -18,7 +18,7 @@ const projects = [
   {
     title: "Healthcare App",
     category: "Mobile",
-    image: "/assets/projects/healthcare.jpg",
+    image: "/assets/icons/healthcare.gif",
     description:
       "Mobile application for healthcare providers with real-time patient monitoring.",
     technologies: ["React Native", "Firebase", "Node.js"],
@@ -26,7 +26,7 @@ const projects = [
   {
     title: "AI Trading Bot",
     category: "AI/ML",
-    image: "/assets/projects/trading.jpg",
+    image: "/assets/icons/ai.gif",
     description:
       "Automated trading system using machine learning for market prediction.",
     technologies: ["Python", "TensorFlow", "AWS"],
@@ -34,14 +34,14 @@ const projects = [
   {
     title: "DeFi Platform",
     category: "Blockchain",
-    image: "/assets/projects/defi.jpg",
+    image: "/assets/icons/defi.gif",
     description: "Decentralized finance platform for crypto asset management.",
     technologies: ["Solidity", "Web3.js", "React"],
   },
   {
     title: "Social Network",
     category: "Web",
-    image: "/assets/projects/social.jpg",
+    image: "/assets/icons/social.gif",
     description:
       "Feature-rich social networking platform with real-time messaging.",
     technologies: ["Next.js", "GraphQL", "PostgreSQL"],
@@ -49,7 +49,7 @@ const projects = [
   {
     title: "IoT Dashboard",
     category: "Web",
-    image: "/assets/projects/iot.jpg",
+    image: "/assets/icons/ito.gif",
     description: "Real-time IoT device monitoring and management dashboard.",
     technologies: ["Vue.js", "Node.js", "InfluxDB"],
   },
@@ -74,7 +74,9 @@ export default function OurWork() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold mb-6">Our Work</h1>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Our Work
+            </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Explore our portfolio of successful projects and see how we've
               helped businesses transform their digital presence.
@@ -92,10 +94,11 @@ export default function OurWork() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full transition-colors duration-300 ${
+              // className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 transition-colors text-lg"
+              className={`px-6 py-2 rounded-full transition-colors duration-300 bg-gradient-to-r from-blue-500 to-purple-500 text-white ${
                 activeCategory === category
-                  ? "bg-[#366dee] text-white"
-                  : "bg-blue-900/20 text-gray-300 hover:bg-blue-800/30"
+                  ? ""
+                  : "bg-blue-900/20 text-gray-300 hover:from-blue-600 hover:to-purple-600 "
               }`}
             >
               {category}
@@ -121,10 +124,11 @@ export default function OurWork() {
                 <Image
                   src={project.image}
                   alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  // fill
+                  width={200}
+                  height={200}
+                  className="object-contain m-auto filter invert hue-rotate-[230deg] transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
 
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -135,21 +139,24 @@ export default function OurWork() {
                   transition={{ duration: 0.3 }}
                   className="absolute inset-0 flex flex-col justify-end p-6"
                 >
-                  <h3 className="text-2xl font-semibold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-gray-300 text-sm mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="text-xs px-2 py-1 bg-blue-900/50 rounded-full text-blue-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
+                  <div className="absolute inset-0 bg-black/70" />
+                  <div className="z-10">
+                    <h3 className="text-2xl font-semibold mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-300 text-sm mb-4">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className="text-xs px-2 py-1 bg-blue-900/50 rounded-full text-blue-200"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </motion.div>
               </div>
@@ -171,12 +178,18 @@ export default function OurWork() {
             <p className="text-gray-300">
               Let's discuss how we can help bring your vision to life.
             </p>
-            <Link
-              href="/contact-us"
-              className="inline-block bg-[#366dee] text-white px-8 py-3 rounded-full hover:bg-blue-600 transition-colors duration-300"
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block"
             >
-              Start a Project
-            </Link>
+              <Link
+                href="/contact-us"
+                className="inline-block bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 transition-colors text-lg"
+              >
+                Start a Project
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
       </div>

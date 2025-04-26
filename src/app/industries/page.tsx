@@ -7,7 +7,7 @@ const industries = [
   {
     id: "healthcare",
     title: "Healthcare",
-    icon: "/assets/industries/healthcare.svg",
+    icon: "/assets/icons/healthcare.png",
     description:
       "Digital transformation solutions for modern healthcare delivery",
     solutions: [
@@ -18,12 +18,12 @@ const industries = [
       "Patient Management Systems",
       "Medical Imaging AI",
     ],
-    bgImage: "/assets/industries/healthcare-bg.jpg",
+    bgImage: "/assets/icons/healthcare-.png",
   },
   {
     id: "finance",
     title: "Finance & Banking",
-    icon: "/assets/industries/finance.svg",
+    icon: "/assets/icons/finance.png",
     description: "Innovative fintech solutions for the modern financial sector",
     solutions: [
       "Digital Banking Platforms",
@@ -33,12 +33,12 @@ const industries = [
       "Blockchain Solutions",
       "Regulatory Compliance",
     ],
-    bgImage: "/assets/industries/finance-bg.jpg",
+    bgImage: "/assets/icons/finance-.png",
   },
   {
     id: "retail",
     title: "Retail & E-commerce",
-    icon: "/assets/industries/retail.svg",
+    icon: "/assets/icons/retail.png",
     description: "End-to-end digital solutions for modern retail operations",
     solutions: [
       "E-commerce Platforms",
@@ -48,12 +48,12 @@ const industries = [
       "Supply Chain Solutions",
       "Loyalty Programs",
     ],
-    bgImage: "/assets/industries/retail-bg.jpg",
+    bgImage: "/assets/icons/retail-.png",
   },
   {
     id: "education",
     title: "Education",
-    icon: "/assets/industries/education.svg",
+    icon: "/assets/icons/education.png",
     description: "Digital learning solutions for modern education",
     solutions: [
       "Learning Management Systems",
@@ -63,12 +63,12 @@ const industries = [
       "Assessment Tools",
       "Administrative Systems",
     ],
-    bgImage: "/assets/industries/education-bg.jpg",
+    bgImage: "/assets/icons/education-.png",
   },
   {
     id: "manufacturing",
     title: "Manufacturing",
-    icon: "/assets/industries/manufacturing.svg",
+    icon: "/assets/icons/manufacturing.png",
     description: "Smart manufacturing solutions for Industry 4.0",
     solutions: [
       "IoT Manufacturing",
@@ -78,12 +78,12 @@ const industries = [
       "Inventory Management",
       "Production Analytics",
     ],
-    bgImage: "/assets/industries/manufacturing-bg.jpg",
+    bgImage: "/assets/icons/manufacturing-.png",
   },
   {
     id: "real-estate",
     title: "Real Estate",
-    icon: "/assets/industries/real-estate.svg",
+    icon: "/assets/icons/realstate.png",
     description: "Digital solutions for modern real estate operations",
     solutions: [
       "Property Management Systems",
@@ -93,7 +93,7 @@ const industries = [
       "Tenant Portals",
       "Maintenance Management",
     ],
-    bgImage: "/assets/industries/real-estate-bg.jpg",
+    bgImage: "/assets/icons/real-estate-.png",
   },
 ];
 
@@ -128,7 +128,7 @@ export default function Industries() {
                 title: "Healthcare",
                 description:
                   "Innovative solutions for modern healthcare providers.",
-                icon: "🏥",
+                icon: "/assets/icons/healthcare.png",
                 solutions: [
                   "Electronic Health Records",
                   "Telemedicine Platforms",
@@ -140,7 +140,7 @@ export default function Industries() {
                 title: "Finance",
                 description:
                   "Secure and efficient financial technology solutions.",
-                icon: "💰",
+                icon: "/assets/icons/finance.png",
                 solutions: [
                   "Digital Banking",
                   "Payment Processing",
@@ -151,7 +151,7 @@ export default function Industries() {
               {
                 title: "Retail",
                 description: "E-commerce and retail management solutions.",
-                icon: "🛍️",
+                icon: "/assets/icons/retail.png",
                 solutions: [
                   "Online Marketplaces",
                   "Inventory Management",
@@ -167,7 +167,17 @@ export default function Industries() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-8 rounded-xl backdrop-blur-sm border border-blue-500/20"
               >
-                <div className="text-4xl mb-4">{industry.icon}</div>
+                <div className="text-4xl mb-4 filter invert brightness-0">
+                  {" "}
+                  <div className="relative w-12 h-12 mr-4">
+                    <Image
+                      src={industry.icon}
+                      alt={industry.title}
+                      fill
+                      className="object-contain filter invert brightness-0"
+                    />
+                  </div>
+                </div>
                 <h3 className="text-xl font-semibold mb-3 text-white">
                   {industry.title}
                 </h3>
@@ -204,10 +214,13 @@ export default function Industries() {
           </motion.div>
           <div className="grid md:grid-cols-4 gap-8">
             {[
-              { title: "Education", icon: "📚" },
-              { title: "Manufacturing", icon: "🏭" },
-              { title: "Logistics", icon: "🚚" },
-              { title: "Real Estate", icon: "🏢" },
+              { title: "Education", icon: "/assets/icons/education.png" },
+              {
+                title: "Manufacturing",
+                icon: "/assets/icons/manufacturing.png",
+              },
+              { title: "Logistics", icon: "/assets/icons/healthcare.png" },
+              { title: "Real Estate", icon: "/assets/icons/healthcare.png" },
             ].map((industry, index) => (
               <motion.div
                 key={industry.title}
@@ -216,7 +229,17 @@ export default function Industries() {
                 transition={{ duration: 0.5, delay: index * 0.2 }}
                 className="bg-gradient-to-br from-blue-500/10 to-purple-500/10 p-6 rounded-xl backdrop-blur-sm border border-blue-500/20 text-center"
               >
-                <div className="text-4xl mb-4">{industry.icon}</div>
+                <div className="text-4xl mb-4">
+                  {" "}
+                  <div className="relative m-auto w-12 h-12">
+                    <Image
+                      src={industry.icon}
+                      alt={industry.title}
+                      fill
+                      className="object-contain filter invert brightness-0"
+                    />
+                  </div>
+                </div>
                 <h3 className="text-lg font-semibold text-white">
                   {industry.title}
                 </h3>
@@ -227,7 +250,7 @@ export default function Industries() {
       </section>
 
       {/* Success Stories */}
-      <section className="py-20">
+      <section className="py-20 hidden">
         <div className="max-w-7xl mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

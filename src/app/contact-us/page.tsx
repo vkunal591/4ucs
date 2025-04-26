@@ -3,23 +3,29 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const offices = [
+  // {
+  //   city: "New York",
+  //   address: "123 Tech Avenue, NY 10001",
+  //   phone: "+1 (555) 123-4567",
+  //   email: "ny@4uconsultant.com",
+  // },
+  // {
+  //   city: "London",
+  //   address: "456 Innovation Street, EC1A 1BB",
+  //   phone: "+44 20 7123 4567",
+  //   email: "london@4uconsultant.com",
+  // },
+  // {
+  //   city: "Singapore",
+  //   address: "789 Digital Road, 018956",
+  //   phone: "+65 6789 0123",
+  //   email: "singapore@4uconsultant.com",
+  // },
   {
-    city: "New York",
-    address: "123 Tech Avenue, NY 10001",
-    phone: "+1 (555) 123-4567",
-    email: "ny@4uconsultant.com",
-  },
-  {
-    city: "London",
-    address: "456 Innovation Street, EC1A 1BB",
-    phone: "+44 20 7123 4567",
-    email: "london@4uconsultant.com",
-  },
-  {
-    city: "Singapore",
-    address: "789 Digital Road, 018956",
+    city: "New Delhi, India",
+    // address: "789 Digital Road, 018956",
     phone: "+65 6789 0123",
-    email: "singapore@4uconsultant.com",
+    email: "info@4uconsultant.com",
   },
 ];
 
@@ -60,7 +66,9 @@ export default function ContactUs() {
             transition={{ duration: 0.8 }}
             className="text-center"
           >
-            <h1 className="text-5xl font-bold mb-6">Contact Us</h1>
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
+              Contact Us
+            </h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
               Ready to start your next project? Get in touch with us and let's
               create something amazing together.
@@ -171,12 +179,19 @@ export default function ContactUs() {
                   required
                 ></textarea>
               </div>
-              <button
-                type="submit"
-                className="w-full bg-[#366dee] text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+              <motion.div
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="inline-block w-full"
               >
-                Send Message
-              </button>
+                <button
+                  type="submit"
+                  className=" w-full bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full hover:from-blue-600 hover:to-purple-600 transition-colors text-lg"
+                  // className="w-full bg-[#366dee] text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-colors duration-300"
+                >
+                  Send Message
+                </button>
+              </motion.div>
             </form>
           </motion.div>
 
@@ -197,7 +212,7 @@ export default function ContactUs() {
                 >
                   <h3 className="text-xl font-semibold mb-4">{office.city}</h3>
                   <div className="space-y-2 text-gray-300">
-                    <p>{office.address}</p>
+                    {/* <p>{office.address}</p> */}
                     <p>
                       <a
                         href={`tel:${office.phone}`}
