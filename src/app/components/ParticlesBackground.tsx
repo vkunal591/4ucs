@@ -1,12 +1,12 @@
 "use client";
-import { Particles } from "@tsparticles/react";
+// import { Particles } from "@tsparticles/react";
 import {
-  type Container,
-  type Engine,
+  // type Container,
+  // type Engine,
   type ISourceOptions,
 } from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
-import { useCallback } from "react";
+// import { loadSlim } from "@tsparticles/slim";
+// import { useCallback } from "react";
 import Image from "next/image";
 
 const particlesConfig: ISourceOptions = {
@@ -41,16 +41,16 @@ const particlesConfig: ISourceOptions = {
 };
 
 export default function ParticlesBackground() {
-  const particlesInit = useCallback(async (engine: Engine) => {
-    await loadSlim(engine);
-  }, []);
+  // const particlesInit = useCallback(async (engine: Engine) => {
+  //   await loadSlim(engine);
+  // }, []);
 
-  const particlesLoaded = useCallback(
-    async (container: Container | undefined) => {
-      console.log(container);
-    },
-    []
-  );
+  // const particlesLoaded = useCallback(
+  //   async (container: Container | undefined) => {
+  //     console.log(container);
+  //   },
+  //   []
+  // );
 
   return (
     <div className="fixed inset-0 -z-10">
@@ -61,12 +61,12 @@ export default function ParticlesBackground() {
         className="object-cover opacity-20"
         priority
       />
-      <Particles
+      {/* <Particles
         id="tsparticles"
         init={particlesInit}
         loaded={particlesLoaded}
         options={particlesConfig}
-      />
+      /> */}
     </div>
   );
 }
